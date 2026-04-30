@@ -9,6 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --brand-blue: #0b5ed7;
+            --brand-blue-dark: #083c8c;
+            --brand-yellow: #ffd54a;
+            --brand-yellow-soft: #fff2bf;
+            --text-dark: #1f2a3d;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -19,12 +27,13 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--brand-blue-dark) 0%, var(--brand-blue) 58%, var(--brand-yellow) 100%);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 32px 20px;
         }
 
         .container {
@@ -46,7 +55,7 @@
         }
 
         .illustration {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(160deg, var(--brand-blue) 0%, var(--brand-blue-dark) 62%, #06295f 100%);
             padding: 60px;
             display: flex;
             align-items: center;
@@ -70,12 +79,12 @@
             font-size: 36px;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #2d3748;
+            color: var(--text-dark);
         }
 
         .subtitle {
             font-size: 16px;
-            color: #667eea;
+            color: var(--brand-blue);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
@@ -105,7 +114,7 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: var(--brand-blue);
             font-weight: bold;
         }
 
@@ -115,19 +124,19 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, #ffbf1f 100%);
+            color: var(--brand-blue-dark);
             padding: 14px 32px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 191, 31, 0.35);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 10px 24px rgba(255, 191, 31, 0.45);
         }
 
         .secondary-button {
@@ -200,10 +209,20 @@
 
         footer {
             text-align: center;
-            padding: 20px;
+            width: 100%;
+            max-width: 900px;
+            padding: 18px 20px 0;
             font-size: 12px;
-            color: #999;
-            border-top: 1px solid #f0f0f0;
+            color: #f7f9ff;
+        }
+
+        footer a {
+            color: var(--brand-yellow-soft);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -239,7 +258,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 RecallPoint. All rights reserved. | <a href="/privacy-policy.html" style="color: #667eea; text-decoration: none;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color: #667eea; text-decoration: none;">Terms of Service</a></p>
+        <p>&copy; 2026 RecallPoint. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a></p>
     </footer>
 </body>
 </html>
