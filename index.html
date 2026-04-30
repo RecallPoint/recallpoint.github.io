@@ -120,6 +120,9 @@
 
         .cta-section {
             margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .cta-button {
@@ -132,11 +135,40 @@
             font-weight: 600;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 8px 20px rgba(255, 191, 31, 0.35);
+            text-align: center;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 24px rgba(255, 191, 31, 0.45);
+        }
+
+        .cta-button.group-link {
+            background: linear-gradient(135deg, #1a73e8 0%, #0b5ed7 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(11, 94, 215, 0.35);
+        }
+
+        .cta-button.group-link:hover {
+            box-shadow: 0 10px 24px rgba(11, 94, 215, 0.45);
+        }
+
+        .cta-button.alpha-link {
+            background: #ffffff;
+            color: var(--brand-blue-dark);
+            border: 2px solid var(--brand-blue);
+            box-shadow: none;
+        }
+
+        .cta-button.alpha-link:hover {
+            box-shadow: 0 8px 20px rgba(11, 94, 215, 0.2);
+        }
+
+        .cta-note {
+            font-size: 14px;
+            color: #3b4a63;
+            margin-top: 6px;
+            margin-bottom: 0;
         }
 
         .secondary-button {
@@ -244,7 +276,10 @@
             </ul>
 
             <div class="cta-section">
-                <a href="https://play.google.com/store/apps/details?id=io.recallpoint" class="cta-button">Download App</a>
+                <a href="https://play.google.com/store/apps/details?id=io.recallpoint" class="cta-button">Download from Play Store (coming soon)</a>
+                <a href="https://groups.google.com/g/recallpoint-testers" class="cta-button group-link">Join Testing Group</a>
+                <a href="/releases/recallpoint_latest.apk" class="cta-button alpha-link">Latest Alpha Build</a>
+                <p class="cta-note">To test Beta versions of the app, you must join the testing group first.</p>
             </div>
         </div>
 
