@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Patent Drawing: FIG. 4 - Configurable Retrospective-Prospective Capture Window
+  Applicant: J & N Yates Pty Ltd ACN 629 701 364
+-->
+<svg width="760" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="black"/>
+    </marker>
+    <marker id="arr2" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="black"/>
+    </marker>
+    <!-- Hatching for retrospective segment -->
+    <pattern id="hatch-pre" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="black" stroke-width="1.2"/>
+    </pattern>
+    <!-- Dense dots for prospective segment -->
+    <pattern id="hatch-post" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="black" stroke-width="0.7"/>
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+    .title { font-size:14px; font-weight:bold; }
+    .sub   { font-size:11px; font-weight:bold; }
+    .label { font-size:10px; }
+    .ref   { font-size:9px; font-style:italic; }
+    .small { font-size:8px; }
+    line.flow  { stroke:black; stroke-width:1.8; marker-end:url(#arr); }
+    line.brace { stroke:black; stroke-width:1.2; }
+  </style>
+
+  <rect width="760" height="400" fill="white"/>
+
+  <text x="380" y="26" text-anchor="middle" class="title">FIG. 4</text>
+  <text x="380" y="44" text-anchor="middle" class="sub">CONFIGURABLE RETROSPECTIVE-PROSPECTIVE CAPTURE WINDOW  [140]</text>
+
+  <!-- ====== CONFIGURATION TABLE (top) ====== -->
+  <!-- Show example split configurations -->
+  <rect x="40" y="62" width="680" height="60" fill="white" stroke="black" stroke-width="1.2"/>
+  <text x="380" y="80" text-anchor="middle" class="label" font-weight="bold">EXAMPLE WINDOW CONFIGURATIONS (T_total = 60 s)</text>
+  <line x1="40" y1="86" x2="720" y2="86" stroke="black" stroke-width="0.8"/>
+  <text x="110" y="100" text-anchor="middle" class="small">Fully Retrospective</text>
+  <text x="110" y="112" text-anchor="middle" class="small">T_pre=60 / T_post=0</text>
+  <text x="265" y="100" text-anchor="middle" class="small">Majority Retrospective</text>
+  <text x="265" y="112" text-anchor="middle" class="small">T_pre=45 / T_post=15</text>
+  <text x="420" y="100" text-anchor="middle" class="small">Balanced</text>
+  <text x="420" y="112" text-anchor="middle" class="small">T_pre=30 / T_post=30</text>
+  <text x="575" y="100" text-anchor="middle" class="small">Majority Prospective</text>
+  <text x="575" y="112" text-anchor="middle" class="small">T_pre=15 / T_post=45</text>
+  <text x="685" y="100" text-anchor="middle" class="small">Fully Prospective</text>
+  <text x="685" y="112" text-anchor="middle" class="small">T_pre=0 / T_post=60</text>
+
+  <!-- Separator lines in table -->
+  <line x1="190" y1="86" x2="190" y2="122" stroke="black" stroke-width="0.6"/>
+  <line x1="345" y1="86" x2="345" y2="122" stroke="black" stroke-width="0.6"/>
+  <line x1="498" y1="86" x2="498" y2="122" stroke="black" stroke-width="0.6"/>
+  <line x1="636" y1="86" x2="636" y2="122" stroke="black" stroke-width="0.6"/>
+
+  <!-- ====== MAIN TIMELINE ====== -->
+  <!-- Time axis -->
+  <line x1="60" y1="230" x2="700" y2="230" stroke="black" stroke-width="2"/>
+  <!-- Arrowhead at end of timeline -->
+  <polygon points="700,226 710,230 700,234" fill="black"/>
+  <text x="714" y="234" class="small">time</text>
+
+  <!-- Retrospective zone [141] (left of t0) — hatched fill -->
+  <rect x="100" y="200" width="270" height="60" fill="url(#hatch-pre)" stroke="black" stroke-width="1.5" opacity="0.6"/>
+  <!-- Prospective zone [142] (right of t0) — dotted fill -->
+  <rect x="370" y="200" width="270" height="60" fill="url(#hatch-post)" stroke="black" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- t0 vertical trigger line -->
+  <line x1="370" y1="175" x2="370" y2="295" stroke="black" stroke-width="2.5"/>
+  <text x="370" y="165" text-anchor="middle" class="label" font-weight="bold">t₀  TRIGGER EVENT</text>
+  <text x="370" y="308" text-anchor="middle" class="ref">[130]  Trigger accepted</text>
+
+  <!-- Timeline tick marks -->
+  <line x1="100" y1="225" x2="100" y2="235" stroke="black" stroke-width="1.5"/>
+  <line x1="640" y1="225" x2="640" y2="235" stroke="black" stroke-width="1.5"/>
+  <text x="100" y="248" text-anchor="middle" class="small">t₀ − T_pre</text>
+  <text x="640" y="248" text-anchor="middle" class="small">t₀ + T_post</text>
+
+  <!-- Segment labels in fill areas -->
+  <text x="235" y="220" text-anchor="middle" class="label" font-weight="bold">S_pre  [141]</text>
+  <text x="235" y="235" text-anchor="middle" class="small">Retrospective segment</text>
+  <text x="235" y="250" text-anchor="middle" class="small">extracted from buffer</text>
+  <text x="505" y="220" text-anchor="middle" class="label" font-weight="bold">S_post  [142]</text>
+  <text x="505" y="235" text-anchor="middle" class="small">Prospective segment</text>
+  <text x="505" y="250" text-anchor="middle" class="small">recorded live</text>
+
+  <!-- ====== T_pre brace ====== -->
+  <line x1="100" y1="170" x2="370" y2="170" class="brace"/>
+  <line x1="100" y1="164" x2="100" y2="176" class="brace"/>
+  <line x1="370" y1="164" x2="370" y2="176" class="brace"/>
+  <text x="235" y="160" text-anchor="middle" class="label" font-weight="bold">T_pre  (configurable)</text>
+
+  <!-- ====== T_post brace ====== -->
+  <line x1="370" y1="170" x2="640" y2="170" class="brace"/>
+  <line x1="640" y1="164" x2="640" y2="176" class="brace"/>
+  <text x="505" y="160" text-anchor="middle" class="label" font-weight="bold">T_post  (configurable)</text>
+
+  <!-- ====== T_total brace ====== -->
+  <line x1="100" y1="140" x2="640" y2="140" class="brace"/>
+  <line x1="100" y1="134" x2="100" y2="146" class="brace"/>
+  <line x1="640" y1="134" x2="640" y2="146" class="brace"/>
+  <text x="370" y="130" text-anchor="middle" class="label" font-weight="bold">T_total  =  T_pre  +  T_post  (any configurable duration ≥ 1 s)</text>
+
+  <!-- ====== Assembled clip [143] ====== -->
+  <rect x="100" y="330" width="540" height="44" fill="white" stroke="black" stroke-width="2"/>
+  <text x="370" y="351" text-anchor="middle" class="label" font-weight="bold">ASSEMBLED AUDIO CLIP   C   [143]</text>
+  <text x="370" y="367" text-anchor="middle" class="ref">S_pre  ‖  S_post   →   Transcription [150]  →  Topic Extraction [160]  →  Vault [170]</text>
+  <!-- arrow from segments down to assembled clip -->
+  <line x1="235" y1="262" x2="235" y2="328" stroke="black" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+  <line x1="505" y1="262" x2="505" y2="328" stroke="black" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+
+  <!-- Reference line -->
+  <line x1="10" y1="390" x2="750" y2="390" stroke="black" stroke-width="0.6"/>
+  <text x="380" y="400" text-anchor="middle" class="small">
+    [140] Compositor  ·  [141] S_pre  ·  [142] S_post  ·  [143] Clip C  ·  T_total configurable  ·  T_pre + T_post = T_total
+  </text>
+</svg>
