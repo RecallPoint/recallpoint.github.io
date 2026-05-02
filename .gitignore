@@ -1,0 +1,27 @@
+# ── Patent / research documents ──────────────────────────────────────────────
+RecallPoint_Patent_Specification_Draft.md
+RecallPoint_Patent_Specification_Draft.docx
+RecallPoint_Drive_Contents.md
+Patent-specification-template.docx
+
+# Word temporary lock files
+~$*
+
+# ── Patent drawings (local working copies) ───────────────────────────────────
+drawings/
+
+# ── Google Drive / API scripts and credentials ───────────────────────────────
+scripts/
+
+# ── Service account keys — NEVER commit ──────────────────────────────────────
+*.json
+recallpoint-a19ecc3ccfae.json
+
+# ── Drive temp download cache ─────────────────────────────────────────────────
+.drive_tmp/
+
+# ── OS / editor noise ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
