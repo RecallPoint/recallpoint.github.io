@@ -141,6 +141,10 @@
             font-size: 1.1rem;
         }
 
+        input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
         .btn {
             background: var(--gold);
             color: var(--navy);
@@ -156,6 +160,13 @@
         .btn:hover {
             background: var(--soft-gold);
             transform: translateY(-2px);
+        }
+
+        .form-status {
+            min-height: 22px;
+            margin-top: 6px;
+            font-size: 0.95rem;
+            color: var(--soft-gold);
         }
 
         .ios-waitlist {
@@ -205,7 +216,7 @@
 
     <div class="container">
         <header>
-            <img src="vault-logo.png" alt="RecallPoint Logo" class="logo">
+            <img src="/vault-logo.png" alt="RecallPoint Logo" class="logo">
             <h1>RECALLPOINT</h1>
             <p class="tagline">Don't let those Aha moments be forgotten.</p>
             <div class="patent-badge">AU Provisional Patent Pending</div>
@@ -243,18 +254,20 @@
             <h2>Join the Android Founding 100</h2>
             <p>Secure your spot in the first 100 pioneers. Launching June 2026.</p>
             <span class="price-lock">$4.99/mo Lifetime Lock-In</span>
-            <form>
-                <input type="email" placeholder="Your best email address" required>
+            <form id="android-waitlist-form">
+                <input type="email" name="email" placeholder="Your best email address" required>
                 <button type="submit" class="btn">SECURE MY FOUNDING SPOT</button>
+                <p id="android-status" class="form-status" aria-live="polite"></p>
             </form>
         </div>
 
         <section class="ios-waitlist">
             <h2>iPhone User? Don't go anywhere.</h2>
             <p>Register below and we will notify you the moment the iOS version is ready so you can secure your $4.99 Founding Member price lock too.</p>
-            <form>
-                <input type="email" placeholder="Your best email address" required>
+            <form id="ios-waitlist-form">
+                <input type="email" name="email" placeholder="Your best email address" required>
                 <button type="submit" class="btn" style="background:transparent; border:1px solid var(--gold); color:var(--gold);">NOTIFY ME FOR iOS</button>
+                <p id="ios-status" class="form-status" aria-live="polite"></p>
             </form>
         </section>
 
@@ -271,6 +284,63 @@
             &copy; 2026 J & N YATES PTY LTD | RECALLPOINT
         </footer>
     </div>
+
+    <script>
+        // Replace these with your deployed Apps Script Web App URLs.
+        // You need two deployments (or one script with route params) so each form appends to its own sheet tab.
+        const ANDROID_WAITLIST_ENDPOINT = "";
+        const IOS_WAITLIST_ENDPOINT = "";
+
+        async function submitWaitlist(form, endpoint, platform, statusId) {
+            const statusEl = document.getElementById(statusId);
+            const button = form.querySelector("button[type='submit']");
+            const emailInput = form.querySelector("input[name='email']");
+            const email = (emailInput.value || "").trim();
+
+            if (!endpoint) {
+                statusEl.textContent = "Form endpoint not configured yet. Please add Apps Script URL.";
+                return;
+            }
+
+            statusEl.textContent = "Submitting...";
+            button.disabled = true;
+
+            const payload = new URLSearchParams({
+                email,
+                platform,
+                source: "recallpoint.github.io",
+                page: window.location.pathname,
+                submittedAt: new Date().toISOString()
+            });
+
+            try {
+                // no-cors keeps static-site submissions reliable against Apps Script deployments.
+                await fetch(endpoint, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: payload.toString()
+                });
+
+                form.reset();
+                statusEl.textContent = "Thanks - you're on the waitlist.";
+            } catch (error) {
+                statusEl.textContent = "Submission failed. Please try again.";
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        document.getElementById("android-waitlist-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            submitWaitlist(this, ANDROID_WAITLIST_ENDPOINT, "android", "android-status");
+        });
+
+        document.getElementById("ios-waitlist-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            submitWaitlist(this, IOS_WAITLIST_ENDPOINT, "ios", "ios-status");
+        });
+    </script>
 
 </body>
 </html>
