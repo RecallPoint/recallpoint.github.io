@@ -1,10 +1,26 @@
+function doGet(e) {
+  return handleRequest(e, "GET");
+}
+
 function doPost(e) {
+  return handleRequest(e, "POST");
+}
+
+function handleRequest(e, method) {
   var SPREADSHEET_ID = "13li-e7Q-SEGSXLPHt6abpe5tJJLWl7hI4GF1HuVQ7Ig";
   var ANDROID_GID = 0;
   var IOS_GID = 699530367;
 
   try {
     var params = e.parameter || {};
+
+    if (method === "GET") {
+      return jsonResponse({
+        ok: true,
+        message: "RecallPoint waitlist endpoint is live. Use POST with email + platform.",
+      });
+    }
+
     var email = (params.email || "").trim();
     var platform = (params.platform || "").toLowerCase();
     var source = params.source || "";
