@@ -35,7 +35,7 @@
         }
 
         .logo {
-            width: 220px;
+            width: 330px;
             margin-bottom: 20px;
             filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
         }
@@ -209,6 +209,7 @@
         @media (max-width: 768px) {
             .features { grid-template-columns: 1fr; }
             h1 { font-size: 2.5rem; }
+            .logo { width: 260px; }
         }
     </style>
 </head>
@@ -323,7 +324,7 @@
                 });
 
                 form.reset();
-                statusEl.textContent = "Thanks - you're on the waitlist.";
+                statusEl.textContent = "Thank you for your submission. We look forward to sharing RecallPoint with you soon.";
             } catch (error) {
                 statusEl.textContent = "Submission failed. Please try again.";
             } finally {
