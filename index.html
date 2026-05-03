@@ -289,8 +289,8 @@
     <script>
         // Replace these with your deployed Apps Script Web App URLs.
         // You need two deployments (or one script with route params) so each form appends to its own sheet tab.
-        const ANDROID_WAITLIST_ENDPOINT = "";
-        const IOS_WAITLIST_ENDPOINT = "";
+        const ANDROID_WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbxLaH7P82IvkRX183LBoEJk-diXPwRyJXevAL_y7jD5hnsjmNkMzaaNlqBRtDotWQ_a/exec";
+        const IOS_WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbxLaH7P82IvkRX183LBoEJk-diXPwRyJXevAL_y7jD5hnsjmNkMzaaNlqBRtDotWQ_a/exec";
 
         async function submitWaitlist(form, endpoint, platform, statusId) {
             const statusEl = document.getElementById(statusId);
