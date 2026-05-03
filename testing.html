@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RecallPoint - Audio Insight Capture for Android. Capture moments from podcasts and audio with minimal interruption.">
+    <title>RecallPoint - Testing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #001F3F;
+            --brand-blue-dark: #083c8c;
+            --brand-yellow: #ffd700;
+            --brand-yellow-soft: #d4af37;
+            --text-dark: #1f2a3d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, var(--brand-blue-dark) 0%, var(--brand-blue) 58%, var(--brand-yellow) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .content {
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .illustration {
+            background: linear-gradient(160deg, var(--brand-blue) 0%, var(--brand-blue-dark) 62%, #06295f 100%);
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            margin: 30px 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--brand-blue);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, #ffbf1f 100%);
+            color: var(--brand-blue-dark);
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(255, 191, 31, 0.35);
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(255, 191, 31, 0.45);
+        }
+
+        .cta-button.group-link {
+            background: linear-gradient(135deg, #1a73e8 0%, #0b5ed7 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(11, 94, 215, 0.35);
+        }
+
+        .cta-button.group-link:hover {
+            box-shadow: 0 10px 24px rgba(11, 94, 215, 0.45);
+        }
+
+        .cta-button.alpha-link {
+            background: #ffffff;
+            color: var(--brand-blue-dark);
+            border: 2px solid var(--brand-blue);
+            box-shadow: none;
+        }
+
+        .cta-button.alpha-link:hover {
+            box-shadow: 0 8px 20px rgba(11, 94, 215, 0.2);
+        }
+
+        .cta-note {
+            font-size: 14px;
+            color: #3b4a63;
+            margin-top: 6px;
+            margin-bottom: 0;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            background: transparent;
+            color: #667eea;
+            padding: 12px 24px;
+            margin-left: 10px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .secondary-button:hover {
+            background: #f0f4ff;
+        }
+
+        .illustration-content {
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .illustration h2 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .illustration p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 40px 30px;
+            }
+
+            .illustration {
+                padding: 40px;
+                min-height: 300px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .icon {
+                font-size: 60px;
+            }
+
+            .secondary-button {
+                display: block;
+                margin: 10px 0 0 0;
+                text-align: center;
+            }
+        }
+
+        footer {
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            padding: 18px 20px 0;
+            font-size: 12px;
+            color: #f7f9ff;
+        }
+
+        footer a {
+            color: var(--brand-yellow-soft);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .legal-links {
+            margin-top: 24px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 6px;
+        }
+
+        .legal-links a:hover {
+            color: var(--brand-yellow-soft);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="subtitle">Welcome</div>
+            <h1>RecallPoint</h1>
+            <p>Landing Page & Home for the RecallPoint podcast knowledge note-taking Android application</p>
+
+            <p>RecallPoint is an audio insight capture product designed for professionals, runners, cyclists, and anyone who learns while moving. Capture useful moments from podcasts and spoken audio with minimal interruption.</p>
+
+            <ul class="feature-list">
+                <li>Capture audio insights from your favorite podcasts</li>
+                <li>Android 12+ compatible</li>
+                <li>Local-first, privacy-focused design</li>
+                <li>Minimal interruption to your workflow</li>
+                <li>Organize and tag your captured moments</li>
+            </ul>
+
+            <div class="cta-section">
+                <a href="https://play.google.com/apps/internaltest/4701464897891647819" class="cta-button">Download from Play Store (coming soon)</a>
+                <a href="https://groups.google.com/g/recallpoint-testers" class="cta-button group-link">Join Testing Group (Google Group)</a>
+                <a href="https://play.google.com/store/apps/details?id=com.recallpoint" class="cta-button group-link">Join Testing Group (Play Store)</a>
+                <a href="https://play.google.com/apps/testing/com.recallpoint" class="cta-button group-link">Join Testing Group (Tester Programme)</a>
+                <a href="/releases/recallpoint_latest.apk" class="cta-button alpha-link">Latest Alpha Build</a>
+                <p class="cta-note alpha-version">Version 0.29.15 (Alpha) &mdash; Android 12+ required. Enable &ldquo;Install from unknown sources&rdquo; in device settings.</p>
+                <p class="cta-note">To test Beta versions of the app, you must join the testing group first.</p>
+            </div>
+
+            <div class="legal-links">
+                <a href="/privacy-policy.html">Privacy Policy</a> &middot;
+                <a href="/terms-of-service.html">Terms of Service</a>
+            </div>
+        </div>
+
+        <div class="illustration">
+            <div class="illustration-content">
+                <div class="icon">📱</div>
+                <h2>Made for Motion</h2>
+                <p>Capture insights while running, walking, cycling, or working out. RecallPoint fits seamlessly into your active lifestyle.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RecallPoint. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
