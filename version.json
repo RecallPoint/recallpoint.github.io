@@ -3,12 +3,13 @@
     "minSdkVersion":  31,
     "targetSdkVersion":  35,
     "artifacts":  {
-                      "apk":  "releases/v0.29.43/recallpoint-v0.29.43.apk",
-                      "aab":  "releases/v0.29.43/recallpoint-v0.29.43.aab"
+                      "apk":  "releases/v0.29.44/recallpoint-v0.29.44.apk",
+                      "aab":  "releases/v0.29.44/recallpoint-v0.29.44.aab"
                   },
-    "versionCode":  95,
-    "versionName":  "0.29.43",
+    "versionCode":  96,
+    "versionName":  "0.29.44",
     "changelog":  [
+                      "v0.29.44: Fixed microphone/playback coupling by disabling player audio-focus pausing during always-listening startup and hardening recognizer restart/backoff logic, expanded triple-tap override detection with a wider timing window and less restrictive seek/transition fallback for Bose-style headset event patterns while preserving default single/double behavior, and reduced launcher icon foreground scale to match the provided artwork framing",
                       "v0.29.43: Restored active wake listening during audio playback by removing speaker-playback suppression, recovered Bluetooth triple-tap routing by restoring media-session audio-focus ownership, changed tap handling so single/double previous/next stay immediate default behavior while only tap 3 is overridden to snip, and updated launcher/splash branding with the new icon and logo assets",
                       "v0.29.42: Made the microphone independent from podcast playback, routed wake-phrase capture to normal recording when no podcast is active, stopped voice-trigger startup from pausing in-app playback, restored triple-tap override on previous/next seek keys, preserved default single/double earbud behavior, and published updated APK/AAB website surfaces",
                       "v0.29.41: Replaced MFCC/DTW voice matching with continuous SpeechRecognizer text matching for any-speaker always-listening detection, fixed microphone toggles re-enabling themselves after disable, fixed triple-tap taps 1 and 2 seeking the episode before tap 3 could snip, and published updated APK/AAB website surfaces",
