@@ -3,12 +3,13 @@
     "minSdkVersion":  31,
     "targetSdkVersion":  35,
     "artifacts":  {
-                      "apk":  "releases/v0.29.41/recallpoint-v0.29.41.apk",
-                      "aab":  "releases/v0.29.41/recallpoint-v0.29.41.aab"
+                      "apk":  "releases/v0.29.42/recallpoint-v0.29.42.apk",
+                      "aab":  "releases/v0.29.42/recallpoint-v0.29.42.aab"
                   },
-    "versionCode":  93,
-    "versionName":  "0.29.41",
+    "versionCode":  94,
+    "versionName":  "0.29.42",
     "changelog":  [
+                      "v0.29.42: Made the microphone independent from podcast playback, routed wake-phrase capture to normal recording when no podcast is active, stopped voice-trigger startup from pausing in-app playback, restored triple-tap override on previous/next seek keys, preserved default single/double earbud behavior, and published updated APK/AAB website surfaces",
                       "v0.29.41: Replaced MFCC/DTW voice matching with continuous SpeechRecognizer text matching for any-speaker always-listening detection, fixed microphone toggles re-enabling themselves after disable, fixed triple-tap taps 1 and 2 seeking the episode before tap 3 could snip, and published updated APK/AAB website surfaces",
                       "v0.29.39: Restored always-on triple-tap snip dispatch regardless of compatibility toggle, fixed post-capture voice cooldown reset to stop recording loops, and published updated website APK surfaces",
                       "v0.29.38: Hardened voice trigger against speaker bleed and loop retriggers, tightened keyword thresholds, and force-cancelled active snips immediately when playback stops",
