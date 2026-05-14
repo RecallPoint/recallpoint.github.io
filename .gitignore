@@ -19,6 +19,12 @@ scripts/
 *.json
 recallpoint-a19ecc3ccfae.json
 
+# ── Release APK/AAB artifacts — too large for GitHub Pages; hosted via GitHub Releases ───
+releases/*.apk
+releases/**/*.apk
+releases/*.aab
+releases/**/*.aab
+
 # ── Drive temp download cache ─────────────────────────────────────────────────
 .drive_tmp/
 
