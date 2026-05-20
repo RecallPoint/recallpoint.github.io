@@ -1,14 +1,15 @@
 {
-    "buildDate":  "2026-05-05",
+    "buildDate":  "2026-05-20",
     "minSdkVersion":  31,
     "targetSdkVersion":  35,
     "artifacts":  {
-                      "apk":  "releases/v0.29.44/recallpoint-v0.29.44.apk",
-                      "aab":  "releases/v0.29.44/recallpoint-v0.29.44.aab"
+                      "apk":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.35.0/recallpoint-v0.35.0.apk",
+                      "aab":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.35.0/recallpoint-v0.35.0.aab"
                   },
-    "versionCode":  96,
-    "versionName":  "0.29.44",
+    "versionCode":  174,
+    "versionName":  "0.35.0",
     "changelog":  [
+                      "v0.35.0: Share clips as full .rp3 files with a proper message template; Shared With Me inbox for received clips with Add to Vault and Delete actions; mic auto-pauses while editing notes so keyboard dictation works; full Android Auto media support with browse tree and Snip button",
                       "v0.29.44: Fixed microphone/playback coupling by disabling player audio-focus pausing during always-listening startup and hardening recognizer restart/backoff logic, expanded triple-tap override detection with a wider timing window and less restrictive seek/transition fallback for Bose-style headset event patterns while preserving default single/double behavior, and reduced launcher icon foreground scale to match the provided artwork framing",
                       "v0.29.43: Restored active wake listening during audio playback by removing speaker-playback suppression, recovered Bluetooth triple-tap routing by restoring media-session audio-focus ownership, changed tap handling so single/double previous/next stay immediate default behavior while only tap 3 is overridden to snip, and updated launcher/splash branding with the new icon and logo assets",
                       "v0.29.42: Made the microphone independent from podcast playback, routed wake-phrase capture to normal recording when no podcast is active, stopped voice-trigger startup from pausing in-app playback, restored triple-tap override on previous/next seek keys, preserved default single/double earbud behavior, and published updated APK/AAB website surfaces",
