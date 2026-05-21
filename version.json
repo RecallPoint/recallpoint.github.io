@@ -1,13 +1,13 @@
 {
-    "buildDate":  "2026-05-21",
+    "buildDate":  "2026-05-29",
     "minSdkVersion":  31,
     "targetSdkVersion":  35,
     "artifacts":  {
-                      "apk":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.35.8/recallpoint-v0.35.8.apk",
-                      "aab":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.35.8/recallpoint-v0.35.8.aab"
+                      "apk":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.35.9/recallpoint-v0.35.9.apk",
+                      "aab":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.35.9/recallpoint-v0.35.9.aab"
                   },
-    "versionCode":  182,
-    "versionName":  "0.35.8",
+    "versionCode":  183,
+    "versionName":  "0.35.9",
     "changelog":  [
                       "v0.35.1: Fix 3 sharing bugs: vault bookmark clips now share with correct message template; share message auto-copied to clipboard when sending rp3 (WhatsApp/Telegram strip EXTRA_TEXT from file shares); rp3 files received via WhatsApp now import correctly via ZIP magic-byte detection instead of failing with 'Could not import clip'",
                       "v0.29.44: Fixed microphone/playback coupling by disabling player audio-focus pausing during always-listening startup and hardening recognizer restart/backoff logic, expanded triple-tap override detection with a wider timing window and less restrictive seek/transition fallback for Bose-style headset event patterns while preserving default single/double behavior, and reduced launcher icon foreground scale to match the provided artwork framing",
