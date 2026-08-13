@@ -1,14 +1,15 @@
 {
-    "buildDate":  "2026-06-22",
+    "buildDate":  "2026-08-13",
     "minSdkVersion":  31,
-    "targetSdkVersion":  35,
+    "targetSdkVersion":  36,
     "artifacts":  {
-                      "apk":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.37.5/recallpoint-v0.37.5.apk",
-                      "aab":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.37.5/recallpoint-v0.37.5.aab"
+                      "apk":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.56.1/recallpoint-v0.56.1.apk",
+                      "aab":  "https://github.com/RecallPoint/RecallPoint/releases/download/v0.56.1/recallpoint-v0.56.1.aab"
                   },
-    "versionCode":  194,
-    "versionName":  "0.37.5",
+    "versionCode":  285,
+    "versionName":  "0.56.1",
     "changelog":  [
+                      "v0.56.1: Added automatic daily podcast checks at local midnight (toggleable), fixed manual feed refresh to preserve played and downloaded episode state, and hardened release version metadata consistency tooling.",
                       "v0.35.1: Fix 3 sharing bugs: vault bookmark clips now share with correct message template; share message auto-copied to clipboard when sending rp3 (WhatsApp/Telegram strip EXTRA_TEXT from file shares); rp3 files received via WhatsApp now import correctly via ZIP magic-byte detection instead of failing with 'Could not import clip'",
                       "v0.29.44: Fixed microphone/playback coupling by disabling player audio-focus pausing during always-listening startup and hardening recognizer restart/backoff logic, expanded triple-tap override detection with a wider timing window and less restrictive seek/transition fallback for Bose-style headset event patterns while preserving default single/double behavior, and reduced launcher icon foreground scale to match the provided artwork framing",
                       "v0.29.43: Restored active wake listening during audio playback by removing speaker-playback suppression, recovered Bluetooth triple-tap routing by restoring media-session audio-focus ownership, changed tap handling so single/double previous/next stay immediate default behavior while only tap 3 is overridden to snip, and updated launcher/splash branding with the new icon and logo assets",
